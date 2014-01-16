@@ -35,6 +35,14 @@ getID();
   </head>
 
   <body>   
+  <div id="fb-root"></div>
+	<script>(function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+	  fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>
     
     <!-- Le modal window -->
     <div id="modal" class="modal fade hide">
@@ -59,7 +67,7 @@ getID();
     <div class="topbar">
       <div class="fill">
         <div class="container">
-          <a class="brand" href="<?php echo $BASE_URL;?>">UMD<strong>opticon</strong></a>
+          <a class="brand" href="<?php echo $BASE_URL;?>">Do you know about UMD?</a>
         </div>
       </div>
     </div>
@@ -72,10 +80,10 @@ getID();
       <img src="images/ufmg.png" alt="UFMG" height="30px"/>
       </div>
       
+      	<div class="fb-like" data-href="http://urban.myeonglee.com" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
         <div class="addthis_toolbox addthis_default_style "
              addthis:url="http://www.urbanopticon.org/">
-        <a class="addthis_button_facebook_like"
-           fb:like:layout="button_count"></a>
+        
         <a class="addthis_button_tweet" tw:via="urbanopticon"></a>
         <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
         </div>
@@ -138,8 +146,11 @@ getID();
          <a href="http://homepages.dcc.ufmg.br/~virgilio/site/" target="_blank">Virgílio Almeida</a> (UFMG) and  
          <a href="http://www.cl.cam.ac.uk/~jac22/" target="_blank">Jon Crowcroft</a> (University of Cambridge)
          <br/>
-         <strong>Contact: </strong>
+         <strong>Contact for Original Work: </strong>
          <a href="mailto:dq209@cl.cam.ac.uk?cc=jpesce@gmail.com" target="_blank">Daniele Quercia</a>
+         <br>
+         <strong>Modified for UMD by: </strong>
+         <a href="mailto:myeong@umd.edu" target="_blank">Myeong Lee</a>
       </p>
       </div>
       </footer>

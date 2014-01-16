@@ -5,7 +5,7 @@ function connect() {
           or die('Could not connect: ' . mysql_error());
   mysql_select_db('a8068967_psymap') or die('Could not select database');
   */
-	$link = mysql_connect('localhost', 'a8068967_psymap', 'asdf123')
+	$link = mysql_connect('localhost', 'root', 'root')
 	or die('Could not connect: ' . mysql_error());
 	mysql_select_db('a8068967_psymap') or die('Could not select database');
   return $link;
