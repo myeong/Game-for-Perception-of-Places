@@ -35,14 +35,6 @@ getID();
   </head>
 
   <body>   
-  <div id="fb-root"></div>
-	<script>(function(d, s, id) {
-	  var js, fjs = d.getElementsByTagName(s)[0];
-	  if (d.getElementById(id)) return;
-	  js = d.createElement(s); js.id = id;
-	  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
-	  fjs.parentNode.insertBefore(js, fjs);
-	}(document, 'script', 'facebook-jssdk'));</script>
     
     <!-- Le modal window -->
     <div id="modal" class="modal fade hide">
@@ -67,7 +59,7 @@ getID();
     <div class="topbar">
       <div class="fill">
         <div class="container">
-          <a class="brand" href="<?php echo $BASE_URL;?>">Do you know about UMD?</a>
+          <a class="brand" href="<?php echo $BASE_URL;?>">Do you know about College Park?</a>
         </div>
       </div>
     </div>
@@ -75,21 +67,20 @@ getID();
     <!-- Le content -->
     <div class="container">
       <div class="right">
-      <img src="images/cuni.png" alt="University of Cambridge" height="30px"/>
+      <img src="images/umd_logo.png" alt="University of Maryland" height="30px"/>
       &nbsp;&nbsp;
-      <img src="images/ufmg.png" alt="UFMG" height="30px"/>
+      <img src="images/casci_logo.jpg" alt="CASCI" height="30px"/>
       </div>
       
-      	<div class="fb-like" data-href="http://urban.myeonglee.com" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
-        <div class="addthis_toolbox addthis_default_style "
-             addthis:url="http://www.urbanopticon.org/">
-        
-        <a class="addthis_button_tweet" tw:via="urbanopticon"></a>
-        <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
-        </div>
-        <script type="text/javascript"
-        src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4eef554136c9e81b"></script>
-        </script>
+			<!-- AddThis Button BEGIN -->
+			<div class="addthis_toolbox addthis_default_style " addthis:url="http://urban.myeonglee.com">
+				<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+				<a class="addthis_button_tweet"></a>
+			  <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+			</div>
+			<script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
+			<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-52d7671c3bebcee6"></script>
+			<!-- AddThis Button END -->
  
       <div class="page-header">
         <div id="game-stats">
@@ -101,7 +92,9 @@ getID();
         <h1>Where is this?</h1>
       </div>
 
-      <p class="left">Choose Your Answer's Precision:</p>
+      <!-- 
+      <p>Choose a best option describing the photo:</p>
+      
       <div id="choose_type">
         <div id="choose-tube" class="btn">
           UMD Building
@@ -113,6 +106,7 @@ getID();
           Don't know
         </div>
       </div>
+       -->
 
 
       <div id="picture">
@@ -127,7 +121,8 @@ getID();
       </div>
 
       <div class="clear"></div>
-        
+      
+      <!--   
       <div class="row">
         <div class="span8">
           <div class="page-header"><h2>Why playing it?</h2></div>
@@ -138,19 +133,21 @@ getID();
           <p class="justify">Every Terps has had long associations with some parts of the university, which bring to mind a flood of associations. Over the years, UMD has been built and maintained in a way that it is imaginable: in a way that mental maps of the school are clear and economical of mental effort. Starting from Kevin Lynch's seminal book "The image of the city", studies have posited that good imaginability allows city dwellers to feel at home and increase their community well-being. The good news is that the concept of imaginability is quantifiable, and it is so partly based on recognisability maps. We hope that these maps will inform the positive design of public facilities (e.g., civic buildings) and promote urban interventions (e.g., place landmark in key areas, refurbish memorable horrible buildings).</p>
         </div>
       </div>
+       -->
       <footer>
       <div id="team">
-      <p><strong>Team: </strong> 
+      <p>
+      	<strong>Redesigned and Modified by: </strong>
+         <a href="mailto:myeong@umd.edu" target="_blank">Myeong Lee </a>(University Of Maryland)
+         <br>
+      	<strong>Team for Original Work: </strong> 
          <a href="mailto:jpesce@gmail.com" target="_blank">João Pesce</a> (UFMG), 
          <a href="http://www.cl.cam.ac.uk/~dq209/" target="_blank">Daniele Quercia</a> (University of Cambridge), 
          <a href="http://homepages.dcc.ufmg.br/~virgilio/site/" target="_blank">Virgílio Almeida</a> (UFMG) and  
          <a href="http://www.cl.cam.ac.uk/~jac22/" target="_blank">Jon Crowcroft</a> (University of Cambridge)
          <br/>
-         <strong>Contact for Original Work: </strong>
-         <a href="mailto:dq209@cl.cam.ac.uk?cc=jpesce@gmail.com" target="_blank">Daniele Quercia</a>
-         <br>
-         <strong>Modified for UMD by: </strong>
-         <a href="mailto:myeong@umd.edu" target="_blank">Myeong Lee</a>
+         <strong>Origian Work Site: </strong>
+         <a href="http://urbanopticon.org" target="_blank">UrbanOpticon</a>
       </p>
       </div>
       </footer>

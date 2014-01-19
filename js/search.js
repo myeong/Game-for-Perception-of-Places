@@ -28,7 +28,7 @@ $(function(){
        }
     }); // End AJAX
   });
-
+  
   // Choose precision
   $("#choose-tube").click(function(){
     $("#answer").html(loadingHtml).load("tubeSearch.php", function(){
@@ -160,37 +160,31 @@ function submit(point_id,answer_input,page) {
 }
 
 function loadAnswerForm() {
-  // Help fill station name
-  $("#answer-input").keyup(function(){
-    value = $("#answer-input").val();
-    type = $("#type").val();
-    var url = "livesearch.php?q="+encodeURI(value)+"&t="+encodeURI(type);
-    $("#livesearch").load(url);
-    $("#livesearch").css('display','block');
-  });
-
-  $(document).click(function(){
-    if($('#livesearch').length != 0) {
-      hide('livesearch');
-    }
-  });
 
   // Submit answer
   $("#submit").click(function(){
-    var point_id = $('#point-id').val();
-    var answer = $('#answer-input').val();
+    var point_id = $('#point-id').val();    
 
+    if ($("input:radio[name=q1]").is(":checked")){
+    	alert($("input:radio[name=q1]:checked").val());
+    } else {
+    	alert("Nothing is selected!");
+    }
     
+    	/*
     if($("#type").val()=='tubes')
       submit(point_id,answer,'sendTube.php');
     else if($("#type").val()=='boroughs')
       submit(point_id,answer,'sendBorough.php');
+      */
   });
 }
 
 function generatePoint() {
   $.get('generatePoint.php', function(data){
-    $("#answer").html(loadingHtml).load('helper.php');
+    $("#answer").html(loadingHtml).load('options.php', function(){
+    	loadAnswerForm();
+    });	  
     var value = JXG.getValue(data);
     var values = value.split(',');
     $("#image-file").attr("src","photos/"+values[2]+".jpg");
@@ -212,6 +206,7 @@ function generatePoint() {
     };  
     var values = new google.maps.StreetViewPanorama(document.getElementById("pano"),options);
     map.setStreetView(values);
+    
     });
 }
 
