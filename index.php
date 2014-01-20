@@ -146,7 +146,7 @@ getID();
          <a href="http://homepages.dcc.ufmg.br/~virgilio/site/" target="_blank">Virgílio Almeida</a> (UFMG) and  
          <a href="http://www.cl.cam.ac.uk/~jac22/" target="_blank">Jon Crowcroft</a> (University of Cambridge)
          <br/>
-         <strong>Origian Work Site: </strong>
+         <strong>Original Work Site: </strong>
          <a href="http://urbanopticon.org" target="_blank">UrbanOpticon</a>
       </p>
       </div>
