@@ -7,7 +7,7 @@ getID();
   <head>
     <meta charset="utf-8">
     <meta property="fb:app_id" content="297302786992554" />
-    <title>UMDOpticon - How well do you know UMD?</title>
+    <title>How well do you know College Park?</title>
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
