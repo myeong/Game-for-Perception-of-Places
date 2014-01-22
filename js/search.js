@@ -163,20 +163,17 @@ function loadAnswerForm() {
 
   // Submit answer
   $("#submit").click(function(){
-    var point_id = $('#point-id').val();    
+    var point_id = $('#point-id').val();   
+    var ans = '';
 
     if ($("input:radio[name=q1]").is(":checked")){
-    	alert($("input:radio[name=q1]:checked").val());
+    	ans = $("input:radio[name=q1]:checked").val();
     } else {
     	alert("Nothing is selected!");
     }
     
-    	/*
-    if($("#type").val()=='tubes')
-      submit(point_id,answer,'sendTube.php');
-    else if($("#type").val()=='boroughs')
-      submit(point_id,answer,'sendBorough.php');
-      */
+   // submit(point_id,answer,'sendAnswer.php');
+
   });
 }
 
@@ -189,9 +186,6 @@ function generatePoint() {
     $("#answer").html(loadingHtml).load('options.php?values='+values, function(){    	
     	loadAnswerForm();
     });    
-    
-    /* for options */
-    
     
     $("#random-data").html(value); /* for debugging */
     $("#image-file").attr("src","photos/"+values[2]+".jpg");
