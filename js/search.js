@@ -168,6 +168,7 @@ function loadAnswerForm() {
 
     if ($("input:radio[name=q1]").is(":checked")){
     	ans = $("input:radio[name=q1]:checked").val();
+    	alert(ans);
     } else {
     	alert("Nothing is selected!");
     }
