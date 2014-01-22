@@ -115,6 +115,8 @@ getID();
         <input type="hidden" id="point-id" name="point_id" value="" />
         <input type="hidden" id="fake" name="fake" value="" />
         <div id="report">report image</div>
+        <div id="random-data"></div>
+        <span>Returned value:</span><span id="map-returned"></span>
       </div>
 
       <div id="answer">

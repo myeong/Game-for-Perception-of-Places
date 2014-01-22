@@ -182,11 +182,18 @@ function loadAnswerForm() {
 
 function generatePoint() {
   $.get('generatePoint.php', function(data){
-    $("#answer").html(loadingHtml).load('options.php', function(){
+	  
+	var value = JXG.getValue(data);
+	var values = value.split(',');
+	
+    $("#answer").html(loadingHtml).load('options.php?values='+values, function(){    	
     	loadAnswerForm();
-    });	  
-    var value = JXG.getValue(data);
-    var values = value.split(',');
+    });    
+    
+    /* for options */
+    
+    
+    $("#random-data").html(value); /* for debugging */
     $("#image-file").attr("src","photos/"+values[2]+".jpg");
     $("#point-id").val(values[2]);
     $("#fake").val(values[3]);
@@ -206,6 +213,7 @@ function generatePoint() {
     };  
     var values = new google.maps.StreetViewPanorama(document.getElementById("pano"),options);
     map.setStreetView(values);
+    $("#map-returned").html(values); /* for debugging */
     
     });
 }
