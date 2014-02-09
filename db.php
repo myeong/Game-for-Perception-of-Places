@@ -8,7 +8,7 @@ function connect() {
 	if (($_SERVER['SERVER_NAME']) == "localhost") {
 		$link = mysql_connect('localhost', 'root', 'root')
 		or die('Could not connect: ' . mysql_error());
-		mysql_select_db('a8068967_psymap') or die('Could not select database');
+		mysql_select_db('myeong_urban') or die('Could not select database');
 	}
 	else {
 		$link = mysql_connect('localhost', 'myeong_drupal', 'drupal123')

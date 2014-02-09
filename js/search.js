@@ -166,8 +166,8 @@ function loadAnswerForm() {
     var point_id = $('#point-id').val();   
     var ans = '';
 
-    if ($("input:radio[name=q1]").is(":checked")){
-    	ans = $("input:radio[name=q1]:checked").val();
+    if ($("input:radio[name=familiar_q1]").is(":checked")){
+    	ans = $("input:radio[name=familiar_q1]:checked").val();
     	alert(ans);
     } else {
     	alert("Nothing is selected!");
@@ -183,10 +183,15 @@ function generatePoint() {
 	  
 	var value = JXG.getValue(data);
 	var values = value.split(',');
-	
+
+	/*
     $("#answer").html(loadingHtml).load('options.php?values='+values, function(){    	
     	loadAnswerForm();
-    });    
+    });
+    */
+	$("#answer").html(loadingHtml).load('familiarity_question.php', function(){    	
+    	loadAnswerForm();
+    });
     
     $("#random-data").html(value); /* for debugging */
     $("#image-file").attr("src","photos/"+values[2]+".jpg");

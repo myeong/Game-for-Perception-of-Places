@@ -49,13 +49,13 @@ if (!shuffle($options)) {
 	<div id='answer-input'>		
 				<?php
 				$k=0; 
-				while($options[$k]){
+				while(isset($options[$k])){
 					print($options[$k]);
 					$k++;
 				}
 				
 				?>
-				<div class='opt'><input type="radio" name="q1" value="dn"> Don't know </div>
+				<!--  <div class='opt'><input type="radio" name="q1" value="dn"> Don't know </div> -->
 	</div>
 </form>
 <br>

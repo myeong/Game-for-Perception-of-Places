@@ -92,23 +92,6 @@ getID();
         <h1>Where is this?</h1>
       </div>
 
-      <!-- 
-      <p>Choose a best option describing the photo:</p>
-      
-      <div id="choose_type">
-        <div id="choose-tube" class="btn">
-          UMD Building
-        </div>
-        <div id="choose-area" class="btn">
-          UMD Region
-        </div>
-        <div id="choose-dunno" class="btn">
-          Don't know
-        </div>
-      </div>
-       -->
-
-
       <div id="picture">
         <div id="pano"></div>
         <div id="google-copyright"><a href="http://maps.google.com"></a></div>
