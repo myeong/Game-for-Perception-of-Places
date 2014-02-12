@@ -45,6 +45,7 @@ connect();
 </form>
 <br>
 <input id="type" value="familiarity" type="hidden" />
+<input id="geovalues" value="<?php echo $_GET["values"];?>" type="hidden" />
 <input type="button" id="submit" class="btn primary" value="Submit" />
 
 

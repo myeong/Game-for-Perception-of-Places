@@ -159,6 +159,28 @@ function submit(point_id,answer_input,page) {
   });
 }
 
+function submitFam(point_id, answer) {
+	$.get('sendFamiliarity.php?point_id='+point_id+'&answer='+answer);
+}
+
+function loadAnswerForm2() {
+
+	  // Submit answer
+	  $("#submit").click(function(){
+	    var point_id = $('#point-id').val();   
+	    var ans = '';
+
+	    if ($("input:radio[name=q1]").is(":checked")){
+	    	ans = $("input:radio[name=q1]:checked").val();
+	    	alert(ans);
+	    	//submit(point_id,answer,'sendAnswer.php');
+	    } else {
+	    	alert("Nothing is selected!");
+	    }
+
+	  });
+	}
+
 function loadAnswerForm() {
 
   // Submit answer
@@ -168,15 +190,19 @@ function loadAnswerForm() {
 
     if ($("input:radio[name=familiar_q1]").is(":checked")){
     	ans = $("input:radio[name=familiar_q1]:checked").val();
-    	alert(ans);
+    	values = $('#geovalues').val();    	
+    	submitFam(point_id, ans);    
+    	
+        $("#answer").html(loadingHtml).load('options.php?values='+values, function(){    	
+        	loadAnswerForm2();
+        });
+        
     } else {
     	alert("Nothing is selected!");
     }
-    
-   // submit(point_id,answer,'sendAnswer.php');
-
   });
 }
+
 
 function generatePoint() {
   $.get('generatePoint.php', function(data){
@@ -189,7 +215,8 @@ function generatePoint() {
     	loadAnswerForm();
     });
     */
-	$("#answer").html(loadingHtml).load('familiarity_question.php', function(){    	
+	
+	$("#answer").html(loadingHtml).load('familiarity_question.php?values='+values, function(){		
     	loadAnswerForm();
     });
     

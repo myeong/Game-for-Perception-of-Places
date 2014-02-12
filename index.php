@@ -123,13 +123,7 @@ getID();
       <p>
       	<strong>Redesigned and Modified by: </strong>
          <a href="mailto:myeong@umd.edu" target="_blank">Myeong Lee </a>(University Of Maryland)
-         <br>
-      	<strong>Team for Original Work: </strong> 
-         <a href="mailto:jpesce@gmail.com" target="_blank">João Pesce</a> (UFMG), 
-         <a href="http://www.cl.cam.ac.uk/~dq209/" target="_blank">Daniele Quercia</a> (University of Cambridge), 
-         <a href="http://homepages.dcc.ufmg.br/~virgilio/site/" target="_blank">Virgílio Almeida</a> (UFMG) and  
-         <a href="http://www.cl.cam.ac.uk/~jac22/" target="_blank">Jon Crowcroft</a> (University of Cambridge)
-         <br/>
+         <br>      	
          <strong>Original Work Site: </strong>
          <a href="http://urbanopticon.org" target="_blank">UrbanOpticon</a>
       </p>

@@ -11,7 +11,7 @@
       echo base64_encode(gzencode($line['lat'].','.$line['lon'].','.$line['id'].',1'));
     }
   }
-  else {
+  else {    
     $result = query('SELECT id,lat,lon,landmark_id,address_id FROM points WHERE fake IS NULL ORDER BY RAND() LIMIT 1;');
     while ($line = mysql_fetch_array($result, MYSQL_ASSOC)) {
       echo base64_encode(gzencode($line['lat'].','.$line['lon'].','.$line['id'].',0,'.$line['landmark_id'].','.$line['address_id']));
