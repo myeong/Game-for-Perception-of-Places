@@ -59,7 +59,7 @@ if (!shuffle($options)) {
 	</div>
 </form>
 <br>
-<input id="type" value="tubes" type="hidden" />
+<input id="type" value="familiarity" type="hidden" />
 <input type="button" id="submit" class="btn primary" value="Submit" />
 
 

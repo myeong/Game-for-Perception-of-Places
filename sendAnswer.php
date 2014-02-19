@@ -16,49 +16,61 @@ function distance($lat1, $lon1, $lat2, $lon2) {
 
 $points_id = mysql_real_escape_string($_POST['point_id']);
 $answer = $_POST['answer_input'];
+$tfl_answer = '';
+$answer_lat = 0;
+$answer_lon = 0;
 
-
-# Get answer info
-if (is_int($answer)){
+# Get answer info between Landmark or Address
+if (is_numeric($answer)){
 	$q = "SELECT tfl_id,lat,lon FROM address WHERE tfl_id='$answer'";
-} else if (strcmp($answer, "dn") == 0) {
-	/* don't know answer */
-} else
-	$q = "SELECT ons_label,lat,lon FROM landmarks WHERE ons_label='$answer'";
+	$result = query($q);
+	
+	while ($line = mysql_fetch_array($result, MYSQL_ASSOC)) {
+	  $tfl_answer = $line['tfl_id'];
+	  $answer_lat = $line['lat'];
+	  $answer_lon = $line['lon'];
+	}
+	
+	# Insert answer into DB
+	$userinfo = getIDCookie();
+	$users_id = $userinfo['id'];
+	$q  = "INSERT INTO answers (points_id, users_id, address_answer) VALUES ($points_id, $users_id, $tfl_answer)";
+	mysql_query($q);
+	
+	/* To get the correct answer */
+	$q = "SELECT address.name,points.address_id,points.lat,points.lon FROM points JOIN address ON address.tfl_id=points.address_id WHERE id=$points_id";
+} else {   
+	$q = "SELECT ons_label,lat,lon FROM landmarks WHERE ons_label='$answer'";	
+    $result = query($q);
+
+    while ($line = mysql_fetch_array($result, MYSQL_ASSOC)) {  
+      $tfl_answer = $line['ons_label'];
+      $answer_lat = $line['lat'];
+      $answer_lon = $line['lon'];
+    }
+    
+    # Insert answer into DB
+    $userinfo = getIDCookie();
+    $users_id = $userinfo['id'];
+	$q  = "INSERT INTO answers (points_id, users_id, landmark_answer) VALUES ($points_id, $users_id, '$tfl_answer')";
+	$result = mysql_query($q);	
+	
+	/* To get the correct answer */
+	$q = "SELECT landmarks.name,points.landmark_id,points.lat,points.lon FROM points JOIN landmarks ON landmarks.ons_label=points.landmark_id WHERE id=$points_id";
 }
-
-
-
-$result = query($q);
-while ($line = mysql_fetch_array($result, MYSQL_ASSOC)) {
-  $tfl_answer = $line['tfl_id'];
-  $answer_lat = $line['lat'];
-  $answer_lon = $line['lon'];
-}
-if ($station_name=='dunno') $tfl_answer = 0;
-
-# Insert answer into DB
-$userinfo = getIDCookie();
-$users_id = $userinfo['id'];
-$q  = "INSERT INTO answers (points_id, tfl_answer, users_id) VALUES ($points_id, $tfl_answer, $users_id)";
-mysql_query($q);
 
 
 # Get correct answer
-$q = "SELECT name,tubes_tfl_id,points.lat,points.lon FROM points JOIN tubes ON tubes.tfl_id=points.tubes_tfl_id WHERE id=$points_id";
 $result = query($q);
 while ($line = mysql_fetch_array($result, MYSQL_ASSOC)) {
-  $correct_answer = $line['tubes_tfl_id'];
+  $correct_answer = isset($line['address_id']) ? $line['address_id'] : $line['landmark_id'];
   $correct_name = $line['name'];
   $point_lat = $line['lat'];
   $point_lon = $line['lon'];
 }
 
 # Return result
-if ($station_name=='dunno') {
-  echo "15|info|<p><strong>15 points</strong> It was in $correct_name. Next one.</p>";
-} 
-else if($tfl_answer==$correct_answer) {
+if($tfl_answer==$correct_answer) {
   echo "100|success|<p><strong>100 points</strong> That's correct!</p>";
 } 
 else {

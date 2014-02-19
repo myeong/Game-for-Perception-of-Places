@@ -10,22 +10,20 @@ $score = $_GET['s'];
 echo "<p>Congratulations! You scored $score points</p>";
 ?>
 <a href="
-https://twitter.com/intent/tweet?
-text=<?php echo urlencode("My score at #UrbanOpticon was $score! Test your knowledge of #London at $BASE_URL #ldn")?>"
+https://twitter.com/intent/tweet?text=<?php echo urlencode("My score at #UrbanOpticonCP was $score! Test your knowledge of #CollegePark at $BASE_URL #CollegePark")?>"
 class="btn"
 >
 <img src="images/tweet.png" class="icon"/>
 Tweet it!
 </a>
 <a href="
-https://www.facebook.com/dialog/feed?
-app_id=297302786992554&
+https://www.facebook.com/dialog/feed?app_id=629627080407136&
 link=<?php echo $BASE_URL;?>&
 picture=http://fbrell.com/f8.jpg&
-name=<?php echo urlencode("UrbanOpticon");?>&
-caption=<?php echo urlencode("How well do you know London?");?>&
-description=<?php echo urlencode("My score at UrbanOpticon was $score! Think you can beat me?");?>&
-redirect_uri=http://www.urbanopticon.org/
+name=<?php echo urlencode("UrbanOpticonCP");?>&
+caption=<?php echo urlencode("How well do you know College Park?");?>&
+description=<?php echo urlencode("My score at UrbanOpticonCP was $score! Think you can beat me?");?>&
+redirect_uri=http://urban.myeonglee.com/
 "
 target="_blank"
 class="btn">

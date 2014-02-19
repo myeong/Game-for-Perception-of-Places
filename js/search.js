@@ -104,7 +104,7 @@ function submit(point_id,answer_input,page) {
    
   // Validate
   $.get('checkAnswer.php?q='+escape(answer_input)+'&t='+encodeURI(type), function(data){
-    if(answer_input != 'dunno' && data=='0') {
+    if(data=='0') {
       alertMessage('error', '<strong>Invalid answer!</strong> Try selecting one from the dropdown list')
       return;
     }
@@ -116,7 +116,7 @@ function submit(point_id,answer_input,page) {
       url: page,
       data: dataString,
       success: function(response) {
-        //alertMessage('error', response);
+        //alertMessage('error', response);    	
         response = response.split('|');
         var score_up = response[0];
         var type = response[1];
@@ -127,7 +127,7 @@ function submit(point_id,answer_input,page) {
         increase('#progress', 1);
 
         // End game?
-        if(parseInt($("#progress").html()) >= 10) {
+        if(parseInt($("#progress").html()) >= 1) {
           modal("Score","");
           $(".modal-content").load('share.php?s='+$('#score').html(), function(){
             // Submit user form
@@ -172,8 +172,8 @@ function loadAnswerForm2() {
 
 	    if ($("input:radio[name=q1]").is(":checked")){
 	    	ans = $("input:radio[name=q1]:checked").val();
-	    	alert(ans);
-	    	//submit(point_id,answer,'sendAnswer.php');
+	    	//alert(ans);
+	    	submit(point_id,ans,'sendAnswer.php');
 	    } else {
 	    	alert("Nothing is selected!");
 	    }
