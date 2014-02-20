@@ -19,7 +19,7 @@ Tweet it!
 <a href="
 https://www.facebook.com/dialog/feed?app_id=629627080407136&
 link=<?php echo $BASE_URL;?>&
-picture=http://fbrell.com/f8.jpg&
+picture=http://urban.myeonglee.com/images/generic.jpg&
 name=<?php echo urlencode("UrbanOpticonCP");?>&
 caption=<?php echo urlencode("How well do you know College Park?");?>&
 description=<?php echo urlencode("My score at UrbanOpticonCP was $score! Think you can beat me?");?>&
@@ -35,7 +35,7 @@ Share on Facebook</a>
 <div class="clearfix">
   <label for="username">Username</label>
   <div class="input">
-    <input class="xlarge" id="username" name="username" size="30" type="text" value="<?php echo $userinfo['username']?>"/>
+    <input class="xlarge" id="username" name="username" size="30" type="text" value="<?php echo $userinfo['username'];?>"/>
   </div>
 </div>
 <div class="clearfix">
@@ -43,14 +43,14 @@ Share on Facebook</a>
   <div class="input">
   <div class="input-prepend">
     <span class="add-on">@</span>
-    <input class="xlarge" id="twitter" name="twitter" size="16" type="text" value="<?php echo $userinfo['twitter']?>"/>
+    <input class="xlarge" id="twitter" name="twitter" size="16" type="text" value="<?php echo $userinfo['twitter'];?>"/>
   </div>
   </div>
 </div>
 <div class="clearfix">
   <label for="email">E-mail</label>
   <div class="input">
-    <input class="xlarge" id="email" name="email" size="30" type="text" value="<?php echo $userinfo['email']?>"/>
+    <input class="xlarge" id="email" name="email" size="30" type="text" value="<?php echo $userinfo['email'];?>"/>
   </div>
 </div>
 <div class="clearfix">
@@ -68,7 +68,7 @@ Share on Facebook</a>
 <div class="span4" id="age-div">
   <label for="age">Age</label>
   <div class="input">
-    <input id="age" name="age" size="3" type="text" value="<?php echo $userinfo['age']?>"/>
+    <input id="age" name="age" size="3" type="text" value="<?php echo $userinfo['age'];?>"/>
   </div>
 </div>
 </div>
@@ -76,19 +76,19 @@ Share on Facebook</a>
 <div class="clearfix">
   <label for="postcode">Postcode</label>
   <div class="input">
-    <input class="xlarge" id="postcode" name="postcode" size="30" type="text" value="<?php echo $userinfo['postcode']?>"]/>
+    <input class="xlarge" id="postcode" name="postcode" size="30" type="text" value="<?php echo $userinfo['postcode'];?>"/>
   </div>
 </div>
 <div class="clearfix">
   <label for="ethnic">Ethnic Group</label>
   <div class="input">
-    <input class="xlarge" id="ethnic" name="ethnic" size="30" type="text" value="<?php echo $userinfo['ethnic']?>"]/>
+    <input class="xlarge" id="ethnic" name="ethnic" size="30" type="text" value="<?php echo $userinfo['ethnic'];?>"/>
   </div>
 </div>
 <div class="clearfix">
   <label for="occupation">Occupation</label>
   <div class="input">
-    <input class="xlarge" id="occupation" name="occupation" size="30" type="text" value="<?php echo $userinfo['occupation']?>"]/>
+    <input class="xlarge" id="occupation" name="occupation" size="30" type="text" value="<?php echo $userinfo['occupation'];?>"/>
   </div>
 </div>
 </div>
