@@ -20,9 +20,9 @@ Tweet it!
 https://www.facebook.com/dialog/feed?app_id=629627080407136&
 link=<?php echo $BASE_URL;?>&
 picture=http://urban.myeonglee.com/images/generic.jpg&
-name=<?php echo urlencode("UrbanOpticonCP");?>&
+name=<?php echo urlencode("DoUKnowCollegePark");?>&
 caption=<?php echo urlencode("How well do you know College Park?");?>&
-description=<?php echo urlencode("My score at UrbanOpticonCP was $score! Think you can beat me?");?>&
+description=<?php echo urlencode("My score at DoUKnowCollegePark was $score! Think you can beat me?");?>&
 redirect_uri=http://urban.myeonglee.com/
 "
 target="_blank"
@@ -30,68 +30,18 @@ class="btn">
 <img src="images/facebook.png" class="icon"/>
 Share on Facebook</a>
 
-<p>Can you tell us a little bit about yourself? All data is optional and will be used for research statistics only.</p>
+  <?php   
+    $us = getIDCookie();
+    $users_id = $us['id'];   
+   ?>
+<p>Did you enjoy the quiz game? Then, would you participate in a short survey? It will take less than 10 minutes, and your participation would greatly contribute to our research! Thank you! </p>
 
 <div class="clearfix">
-  <label for="username">Username</label>
   <div class="input">
-    <input class="xlarge" id="username" name="username" size="30" type="text" value="<?php echo $userinfo['username'];?>"/>
+    <a href="https://umd.az1.qualtrics.com/SE/?SID=SV_3wMPwDOf8ks646h&userid=<?php echo $users_id;?>" target="_blank" class="btn">Take a Survey!</a>
   </div>
 </div>
-<div class="clearfix">
-  <label for="twitter">Twitter</label>
-  <div class="input">
-  <div class="input-prepend">
-    <span class="add-on">@</span>
-    <input class="xlarge" id="twitter" name="twitter" size="16" type="text" value="<?php echo $userinfo['twitter'];?>"/>
-  </div>
-  </div>
-</div>
-<div class="clearfix">
-  <label for="email">E-mail</label>
-  <div class="input">
-    <input class="xlarge" id="email" name="email" size="30" type="text" value="<?php echo $userinfo['email'];?>"/>
-  </div>
-</div>
-<div class="clearfix">
-<div class="row">
-<div class="span5">
-  <label for="gender">Gender</label>
-  <div class="input">
-    <select class="medium" name="gender" id="gender">
-      <option <?php if($userinfo['gender']=='Undisclosed') echo 'selected=\"selected\"';?>>Undisclosed</option>
-      <option <?php if($userinfo['gender']=='Female') echo 'selected=\"selected\"';?>>Female</option>
-      <option <?php if($userinfo['gender']=='Male') echo 'selected=\"selected\"';?>>Male</option>
-    </select>
-  </div>
-</div>
-<div class="span4" id="age-div">
-  <label for="age">Age</label>
-  <div class="input">
-    <input id="age" name="age" size="3" type="text" value="<?php echo $userinfo['age'];?>"/>
-  </div>
-</div>
-</div>
-</div>
-<div class="clearfix">
-  <label for="postcode">Postcode</label>
-  <div class="input">
-    <input class="xlarge" id="postcode" name="postcode" size="30" type="text" value="<?php echo $userinfo['postcode'];?>"/>
-  </div>
-</div>
-<div class="clearfix">
-  <label for="ethnic">Ethnic Group</label>
-  <div class="input">
-    <input class="xlarge" id="ethnic" name="ethnic" size="30" type="text" value="<?php echo $userinfo['ethnic'];?>"/>
-  </div>
-</div>
-<div class="clearfix">
-  <label for="occupation">Occupation</label>
-  <div class="input">
-    <input class="xlarge" id="occupation" name="occupation" size="30" type="text" value="<?php echo $userinfo['occupation'];?>"/>
-  </div>
-</div>
-</div>
+
 <div class="modal-footer">
 <input type="submit" id="submit-user" class="btn primary" value="Ok" />
 </div>

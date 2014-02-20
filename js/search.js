@@ -127,7 +127,7 @@ function submit(point_id,answer_input,page) {
         increase('#progress', 1);
 
         // End game?
-        if(parseInt($("#progress").html()) >= 1) {
+        if(parseInt($("#progress").html()) >= 2) {
           modal("Score","");
           $(".modal-content").load('share.php?s='+$('#score').html(), function(){
             // Submit user form
@@ -142,13 +142,14 @@ function submit(point_id,answer_input,page) {
                 }
 
               }); // End AJAX
-              $('#modal').modal('hide');       
+              $('#modal').modal('hide');
+              location.reload();
               return false;
             });
           });
 
           $('#score').html('0');
-          $('#progress').html('0');
+          $('#progress').html('0');          
         }
 
         // New point
@@ -220,7 +221,7 @@ function generatePoint() {
     	loadAnswerForm();
     });
     
-    $("#random-data").html(value); /* for debugging */
+    //$("#random-data").html(value); /* for debugging */
     $("#image-file").attr("src","photos/"+values[2]+".jpg");
     $("#point-id").val(values[2]);
     $("#fake").val(values[3]);
@@ -240,8 +241,7 @@ function generatePoint() {
     };  
     var values = new google.maps.StreetViewPanorama(document.getElementById("pano"),options);
     map.setStreetView(values);
-    $("#map-returned").html(values); /* for debugging */
-    
+        
     });
 }
 
