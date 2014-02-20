@@ -1,5 +1,5 @@
 <div id="helper">
-<h3>How much are you familiar with this place? </h3>
+<h3>How well do you know this place? </h3>
 <br>
 
 <?php 
@@ -10,8 +10,8 @@ connect();
 ?>
 <form name='familiarity_options' method='post'>
 	<div id='answer-input'>	
-	  <div class="left familiarity">&larr;Unfamiliar at all</div>
-	  <div class="right familiarity">Very familiar&rarr;</div>	
+	  <div class="left familiarity">&larr;Not at all</div>
+	  <div class="right familiarity">Very well&rarr;</div>	
 	  <br>
 	  <table class="fopt">
 	    <tr>
