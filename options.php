@@ -1,5 +1,5 @@
 <div id="helper">
-<h3>Choose the best option describing the photo: </h3>
+<h3>Choose the best option describing this photo: </h3>
 <br>
 
 <?php 
