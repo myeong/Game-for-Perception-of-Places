@@ -36,5 +36,7 @@ if ($fake==0){
 $query3 = "INSERT INTO points (id, lat, lon, fake, landmark_id, address_id) VALUES('$point_id', '$lat', '$long', $fake, '$land_id', '$addr_id')";
 mysql_query($query3);
 
-header("Location: index.php");
 ?>
+
+<br>
+<a href="index.php">Back to Insert Form</a>
