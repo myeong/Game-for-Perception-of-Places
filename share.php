@@ -20,7 +20,7 @@ Tweet it!
 https://www.facebook.com/dialog/feed?app_id=629627080407136&
 link=<?php echo $BASE_URL;?>&
 picture=http://urban.myeonglee.com/images/generic.jpg&
-name=<?php echo urlencode("DoUKnowCollegePark");?>&
+name=<?php echo urlencode("My score is $score at DoUKnowCollegePark!!!!");?>&
 caption=<?php echo urlencode("How well do you know College Park?");?>&
 description=<?php echo urlencode("My score at DoUKnowCollegePark was $score! Think you can beat me?");?>&
 redirect_uri=http://urban.myeonglee.com/
