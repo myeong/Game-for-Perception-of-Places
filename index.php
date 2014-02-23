@@ -86,7 +86,7 @@ getID();
         <div id="game-stats">
           <ul>
             <li><strong>Score:</strong> <span id="score">0</span></li>
-            <li><strong>Progress:</strong> <span id="progress">0</span>/2</li>
+            <li><strong>Progress:</strong> <span id="progress">0</span>/5</li>
           </ul>
         </div>
         <h1>Where is this?</h1>

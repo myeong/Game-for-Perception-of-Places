@@ -127,7 +127,7 @@ function submit(point_id,answer_input,page) {
         increase('#progress', 1);
 
         // End game?
-        if(parseInt($("#progress").html()) >= 2) {
+        if(parseInt($("#progress").html()) >= 5) {
           modal("Score","");
           $(".modal-content").load('share.php?s='+$('#score').html(), function(){
             // Submit user form
