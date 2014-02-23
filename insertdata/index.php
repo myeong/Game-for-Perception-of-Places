@@ -44,7 +44,7 @@ $land_id++;
 	</div>
 	<br>
 	Fake <input name="fake" type="radio" value="1">
-	Not Fake <input name="fake" type="radio" value="0" checked="true">
+	Not Fake <input name="fake" type="radio" value="NULL" checked="true">
 	  
 	</div>
 	
