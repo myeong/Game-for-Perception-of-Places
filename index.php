@@ -60,6 +60,7 @@ getID();
       <div class="fill">
         <div class="container">
           <a class="brand" href="<?php echo $BASE_URL;?>">Do you know about College Park?</a>
+          
         </div>
       </div>
     </div>

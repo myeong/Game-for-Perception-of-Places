@@ -1,9 +1,9 @@
+<?php require_once('common.php');?>
 <div id="helper">
 <h3>How well do you know this place? </h3>
 <br>
 
 <?php 
-require_once('common.php');
 
 connect();
 

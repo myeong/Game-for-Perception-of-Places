@@ -1,4 +1,5 @@
-<?php require_once('common.php');
+<?php 
+require_once('common.php');
 if(isset($_COOKIE['userinfo'])) {
   $userinfo = unserialize(base64_decode($_COOKIE["userinfo"]));
 }

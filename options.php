@@ -1,9 +1,9 @@
+<?php require_once('common.php');?>
 <div id="helper">
 <h3>Choose the best option describing this photo: </h3>
 <br>
 
 <?php 
-require_once('common.php');
 
 $options = array();  /* for final options */
 $values = explode(',', $_GET["values"]); /* 0: latitude, 1: longitude, 2: point_id, 3: fake, 4: landmark_id, 5: address_id */
