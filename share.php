@@ -10,7 +10,7 @@ $score = $_GET['s'];
 echo "<p>Congratulations! You scored $score points</p>";
 ?>
 <a href="
-https://twitter.com/intent/tweet?text=<?php echo urlencode("My score at #UrbanOpticonCP was $score! Test your knowledge of #CollegePark at $BASE_URL #CollegePark")?>"
+https://twitter.com/intent/tweet?text=<?php echo urlencode("My score at #UrbanOpticonCP was $score! Test your knowledge of #CollegePark at $BASE_URL");?>"
 class="btn"
 >
 <img src="images/tweet.png" class="icon"/>
@@ -32,7 +32,8 @@ Share on Facebook</a>
 
   <?php   
     $us = getIDCookie();
-    $users_id = $us['id'];   
+    $users_id = $us['id']; 
+    session_destroy();
    ?>
 <p>Did you enjoy the quiz game? Then, would you participate in a short survey? It will take less than 10 minutes, and your participation would greatly contribute to our research! Thank you! </p>
 
