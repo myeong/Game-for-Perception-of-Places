@@ -1,11 +1,12 @@
 <?php
+session_start();
+
 require('db.php');
 require('ip2locationlite.class.php');
 require('lzwc.php');
 
 //$BASE_URL = 'http://urban.myeonglee.com/';
 $BASE_URL = 'http://127.0.0.1/';
-session_start();
 
 function getID(){
   $location = getLocationCookie();
