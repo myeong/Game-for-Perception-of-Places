@@ -1,9 +1,10 @@
+<?php require_once('../common.php');?>
 <html>
 <head>
 <title>Insert GeoData</title>
 </head>
 <?php
-require_once('../common.php');
+
 connect();
 
 /* address id */

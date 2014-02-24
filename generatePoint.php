@@ -23,7 +23,7 @@
       
       if ($_SESSION['occured_id'] == -1){
         $_SESSION['occured_id'] = $line['id'];
-        $_SESSION['count'] = 1;
+        $_SESSION['count'] = 0;
       } else {
         $_SESSION['occured_id'] .= "," . $line['id'];
         $_SESSION['count']++;
