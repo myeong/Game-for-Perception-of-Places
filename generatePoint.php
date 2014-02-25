@@ -23,11 +23,11 @@
       
       if ($_SESSION['occured_id'] == -1){
         $_SESSION['occured_id'] = $line['id'];
-        $_SESSION['count'] = 1;
+        $_SESSION['count'] = 0;
       } else {
         $_SESSION['occured_id'] .= "," . $line['id'];
         $_SESSION['count']++;
-        if ($_SESSION['count']==5) unset($_SESSION['occured_id']);
+        if ($_SESSION['count']==$NUM_QUESTION) unset($_SESSION['occured_id']);
       }
       
     }    
