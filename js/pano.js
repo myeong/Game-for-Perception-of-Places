@@ -31,7 +31,7 @@ function initialize(alpha) {
     pov: {
       heading: 20,
       pitch: 10,
-      zoom: 5
+      zoom: 10
     },
     linksControl: false,
     addressControl: false
