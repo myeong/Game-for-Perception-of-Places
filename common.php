@@ -4,9 +4,9 @@ require('db.php');
 require('ip2locationlite.class.php');
 require('lzwc.php');
 
-//$BASE_URL = 'http://urban.myeonglee.com/';
-$BASE_URL = 'http://127.0.0.1/';
-$NUM_QUESTION = 2;
+$BASE_URL = 'http://urban.myeonglee.com/';
+//$BASE_URL = 'http://127.0.0.1/';
+$NUM_QUESTION = 15;
 
 function getID(){
   $location = getLocationCookie();
