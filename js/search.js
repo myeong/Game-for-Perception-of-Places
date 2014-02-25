@@ -232,7 +232,7 @@ function generatePoint() {
       pov: {
         heading: 20, 
         pitch: 10, 
-        zoom: 0,
+        zoom: 5,
       },  
       scrollwheel: false,
       linksControl: false,
