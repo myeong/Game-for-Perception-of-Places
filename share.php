@@ -21,7 +21,7 @@ Tweet it!
 https://www.facebook.com/dialog/feed?app_id=629627080407136&
 link=<?php echo $BASE_URL;?>&
 picture=http://urban.myeonglee.com/images/generic.jpg&
-name=<?php echo urlencode("My score is $score at DoUKnowCollegePark!!!!");?>&
+name=<?php echo urlencode("My score is $score at UrbanOpticonCP");?>&
 caption=<?php echo urlencode("How well do you know College Park?");?>&
 description=<?php echo urlencode("My score at DoUKnowCollegePark was $score! Think you can beat me?");?>&
 redirect_uri=http://urban.myeonglee.com/
@@ -40,7 +40,7 @@ Share on Facebook</a>
 
 <div class="clearfix">
   <div class="input">
-    <a href="https://umd.az1.qualtrics.com/SE/?SID=SV_3wMPwDOf8ks646h&userid=<?php echo $users_id;?>" target="_blank" class="btn">Take a Survey!</a>
+    <a href="https://umd.az1.qualtrics.com/SE/?SID=SV_cMxh8uVNJlpbmap&userid=<?php echo $users_id;?>" target="_blank" class="btn">Take a Survey!</a>
   </div>
 </div>
 

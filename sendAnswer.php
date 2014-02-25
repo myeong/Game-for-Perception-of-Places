@@ -71,7 +71,7 @@ while ($line = mysql_fetch_array($result, MYSQL_ASSOC)) {
 
 # Return result
 if($tfl_answer==$correct_answer) {
-  echo "100|success|<p><strong>100 points</strong> That's correct!</p>";
+  echo "100|success|<p><strong>100 points</strong> That's correct!</p>|$NUM_QUESTION";
 } 
 else {
   $d = distance($point_lat,$point_lon,$answer_lat,$answer_lon) * 200; #meters
@@ -81,12 +81,12 @@ else {
     $message = "<p><strong>$score points -</strong> It was in $correct_name: not quite right, but close.</p>";
   }
   else {
-    if($d <= 5000)
+    if($d <= 1000)
       $score = round(75/pow($d-300,0.2));
     else $score = 0;
     $message = "<p><strong>$score points -</strong> It was in $correct_name.</p>";
   }
 
-  echo "$score|error|$message";
+  echo "$score|error|$message|$NUM_QUESTION";
 }
 ?>

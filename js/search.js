@@ -121,13 +121,14 @@ function submit(point_id,answer_input,page) {
         var score_up = response[0];
         var type = response[1];
         var message = response[2];
+        var num_question = response[3];
         alertMessage(type, message);
 
         increase('#score', score_up);
         increase('#progress', 1);
 
         // End game?
-        if(parseInt($("#progress").html()) >= 5) {
+        if(parseInt($("#progress").html()) >= num_question) {
           modal("Score","");
           $(".modal-content").load('share.php?s='+$('#score').html(), function(){
             // Submit user form
