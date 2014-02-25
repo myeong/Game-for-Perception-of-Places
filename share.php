@@ -40,7 +40,7 @@ Share on Facebook</a>
 
 <div class="clearfix">
   <div class="input">
-    <a href="https://umd.az1.qualtrics.com/SE/?SID=SV_cMxh8uVNJlpbmap&userid=<?php echo $users_id;?>" target="_blank" class="btn">Take a Survey!</a>
+    <a href="https://umd.az1.qualtrics.com/SE/?SID=SV_cMxh8uVNJlpbmap&userid=<?php echo $users_id;?>" target="_blank" class="btn-success">Take a Survey!</a>
   </div>
 </div>
 
