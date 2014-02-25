@@ -6,7 +6,7 @@ require('lzwc.php');
 
 //$BASE_URL = 'http://urban.myeonglee.com/';
 $BASE_URL = 'http://127.0.0.1/';
-$NUM_QUESTION = 6;
+$NUM_QUESTION = 2;
 
 function getID(){
   $location = getLocationCookie();
