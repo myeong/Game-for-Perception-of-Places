@@ -5,13 +5,8 @@ var loadingHtml = "<div class='loading'><img src='images/loading.gif' alt='loadi
 
 $(function(){
   modal();
-  generatePoint();
-
-  // Popovers
-  showPopover("#choose-tube", "<p>Guess the buildings close to this picture. The closer, the more points (max 100).</p>");
-  showPopover("#choose-area", "<p>Guess the region in which this picture was taken and earn 50 points. Yet, if you at least correctly guess the area (e.g., south, north), you will earn 25 points</p>");
-  showPopover("#choose-dunno", "<p>Skip to the next picture and yet earn 15 points for not answering wrongly.</p>");
-
+  helpPage();
+    
   //Twipsy
   showTwipsy("#report", "If the image is recognizable from visible street signs please report it")
 
@@ -28,27 +23,6 @@ $(function(){
        }
     }); // End AJAX
   });
-  
-  // Choose precision
-  $("#choose-tube").click(function(){
-    $("#answer").html(loadingHtml).load("tubeSearch.php", function(){
-      loadAnswerForm();
-    });
-  });
-
-  $("#choose-area").click(function(){
-    $("#answer").html(loadingHtml).load("areaSearch.php", function(){
-      loadAnswerForm();
-    });
-  });
-
-  $("#choose-dunno").click(function(){
-    var point_id = $('#point-id').val();
-    var station_name = 'dunno';
-
-    submit(point_id,station_name,'sendTube.php');
-  });
-
 
 }); 
 
@@ -262,3 +236,17 @@ function showPopover(id, content) {
     offset: 10
   });
 }
+
+function createUser(){	
+	  $("#submit").click(function(){
+		  $.get('createUser.php');
+		  $("#pano").empty();
+		  generatePoint();
+	  });
+}
+function helpPage(){	
+	$("#answer").html(loadingHtml).load("helper.php", function(){		
+	  	createUser();  	
+	  });
+	$("#pano").append('<img src="images/umd-college-park.jpg">');
+}	

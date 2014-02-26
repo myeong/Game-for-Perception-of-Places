@@ -1,6 +1,9 @@
 <?php 
 require_once('common.php');
-getID();
+
+if(isset($_SESSION['occured_id']) && !empty($_SESSION['occured_id'])) {
+  session_destroy();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
