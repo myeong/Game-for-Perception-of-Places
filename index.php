@@ -94,6 +94,7 @@ getID();
       </div>
 
       <div id="picture">
+        <div>You can pan and look around the scene by dragging the photo.</div>
         <div id="pano"></div>
         <div id="google-copyright"><a href="http://maps.google.com"></a></div>
         <input type="hidden" id="point-id" name="point_id" value="" />
