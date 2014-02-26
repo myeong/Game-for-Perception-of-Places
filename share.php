@@ -36,7 +36,9 @@ Share on Facebook</a>
     $users_id = $us['id']; 
     session_destroy();
    ?>
-<p>Did you enjoy the quiz game? Then, would you participate in a short survey? It will take less than 10 minutes, and your participation would greatly contribute to our research! Thank you! </p>
+<p>Would you participate in a short survey? It will take less than 10 minutes, and you will contribute to improve people’s understanding of importance 
+of cultural background in designing information systems and online communities. Also, you will be better aware of your cultural behaviors through this survey.
+ Thank you so much! </p>
 
 <div class="clearfix">
   <div class="input">
@@ -44,7 +46,9 @@ Share on Facebook</a>
   </div>
 </div>
 
+<!-- 
 <div class="modal-footer">
 <input type="submit" id="submit-user" class="btn primary" value="Ok" />
 </div>
+-->
 </form>
