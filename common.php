@@ -15,9 +15,12 @@ function getID(){
   $country = $location['countryCode'];
   $lat = $location['latitude'];
   $lon = $location['longitude'];
+  $date = new DateTime();  
+  $date->setTimezone(new DateTimeZone('America/New_York'));
+  $datestr = $date->format('Y-m-d H:i:s');
 
   connect();
-  $q = "INSERT INTO users (ip,ip_city,ip_country,ip_lat,ip_lon) VALUE('$ip','$city','$country',$lat,$lon)";
+  $q = "INSERT INTO users (ip,ip_city,ip_country,ip_lat,ip_lon, timestamp) VALUE('$ip','$city','$country',$lat,$lon,'$datestr')";
   mysql_query($q);
   $user['id'] = mysql_insert_id();
   $data = base64_encode(serialize($user));
