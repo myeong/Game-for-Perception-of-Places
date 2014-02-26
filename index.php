@@ -10,7 +10,7 @@ if(isset($_SESSION['occured_id']) && !empty($_SESSION['occured_id'])) {
   <head>
     <meta charset="utf-8">
     <meta property="fb:app_id" content="297302786992554" />
-    <title>How well do you know College Park?</title>
+    <title>Do you know College Park?</title>
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
@@ -62,7 +62,7 @@ if(isset($_SESSION['occured_id']) && !empty($_SESSION['occured_id'])) {
     <div class="topbar">
       <div class="fill">
         <div class="container">
-          <a class="brand" href="<?php echo $BASE_URL;?>">Do you know about College Park?</a>
+          <a class="brand" href="<?php echo $BASE_URL;?>">Do you know College Park?</a>
           
         </div>
       </div>
