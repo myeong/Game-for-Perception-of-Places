@@ -47,7 +47,7 @@ function getIP(){
     $ip=$_SERVER['REMOTE_ADDR'];
   
   if ($ip == '127.0.0.1' or $ip == '::1')
-    return '31.170.160.110';
+    return '0.0.0.0';
   else
   return $ip;
 }
@@ -55,7 +55,7 @@ function getIP(){
 function getLocation(){
   $ip = getIP();
   $ipLite = new ip2location_lite;
-  $ipLite->setKey('ip_lite_key');
+  $ipLite->setKey('1053c5269a22275f139b3fdbd99df3e8a700fa520f2d08018d1f0cfbd2fff943');
   
   $visitorGeolocation = $ipLite->getCity($ip);
   return $visitorGeolocation;
