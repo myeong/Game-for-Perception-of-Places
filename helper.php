@@ -3,4 +3,4 @@
 <p>This game tests the extent to which you are able to recognise parts of College Park, and also how you perceive our city. The more buildings or regions you guess correctly, the more points. You can also share your score on Facebook or Twitter.
 Do you want to start?</p> 
 </div>
-<input type="button" id="submit" class="btn primary" value="Start" />
+<input type="button" id="submit" class="btn primary start" value="Start" />
