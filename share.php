@@ -42,7 +42,7 @@ of cultural background in designing information systems and online communities. 
 
 <div class="clearfix">
   <div class="input">
-    <a href="https://umd.az1.qualtrics.com/SE/?SID=SV_cMxh8uVNJlpbmap&userid=<?php echo $users_id;?>" target="_blank" class="btn btn-success">Take a Survey!</a>
+    <a href="https://umdsurvey.umd.edu/SE/?SID=SV_3az5pycIzKvEUjb&userid=<?php echo $users_id;?>" target="_blank" class="btn btn-success">Take a Survey!</a>
   </div>
 </div>
 
