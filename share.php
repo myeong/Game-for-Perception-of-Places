@@ -39,6 +39,9 @@ Share on Facebook</a>
 <p>Would you participate in a short survey? It will take less than 10 minutes, and you will contribute to improve people’s understanding of importance 
 of cultural background in designing information systems and online communities. Also, you will be better aware of your cultural behaviors through this survey.
  Thank you so much! </p>
+<p>
+If you take a survey, you can get into a raffle for 10 Amazon gift cards ($10 for each).  
+</p>
 
 <div class="clearfix">
   <div class="input">
