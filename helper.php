@@ -1,5 +1,5 @@
 <div id="helper">
-  <h3>1-minute Game with a Purpose</h3>
+  <h3>5-minute Game with a Purpose</h3>
   <p>This game tests the extent to which you are able to recognize parts of College Park, and also how you perceive the city. 
   </p> 
   <h3>How you score?</h3>
