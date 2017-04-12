@@ -1,4 +1,4 @@
-# Landmark Perception Game
+Landmark Perception Game
 ==========
 Myeong Lee
 -------
