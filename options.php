@@ -26,7 +26,7 @@ $options[1] = '<div class="opt"><input type="radio" name="q1" value="'. $row[0] 
 $qr = 'SELECT ons_label, name FROM landmarks WHERE ons_label!="' . $values[4] . '" ORDER BY RAND() LIMIT 2;';
 $result = query($link, $qr);
 $i = 2;
-while ($row = mysql_fetch_array($result, MYSQLI_NUM)) {
+while ($row = mysqli_fetch_array($result, MYSQLI_NUM)) {
 	 $options[$i] = '<div class="opt"><input type="radio" name="q1" value="'. $row[0] .'"> ' . $row[1] . '</div>';
 	 $i++;
 }
