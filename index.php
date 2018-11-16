@@ -28,7 +28,7 @@ if(isset($_SESSION['occured_id']) && !empty($_SESSION['occured_id'])) {
     <script src="js/bootstrap-popover.js" type="text/javascript"></script>
     <script src="js/jsxcompressor.js" type="text/javascript"></script>
     <script src="js/search.js" type="text/javascript"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9FNbQ-spmKiGCIRcwsvDTNXqoj_cZ5d4" async defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=<?php echo $googlemapkey; ?>" async defer></script>
     <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBTJf_y1jGL50yAB9H1ZuQLi-JwtYLgFJw&sensor=false" type="text/javascript"></script> -->
 
     <!-- Le fav and touch icons -->
