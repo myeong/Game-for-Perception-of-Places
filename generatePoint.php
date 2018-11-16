@@ -17,7 +17,7 @@
   }
   else {    
     $query = 'SELECT id,lat,lon,landmark_id,address_id FROM points WHERE fake IS NULL AND id NOT IN ('. $_SESSION['occured_id'] .') ORDER BY RAND() LIMIT 1;';
-    $result = query($query);
+    $result = query($link, $query);
     while ($line = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
       echo base64_encode(gzencode($line['lat'].','.$line['lon'].','.$line['id'].',0,'.$line['landmark_id'].','.$line['address_id']));
       
