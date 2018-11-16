@@ -5,21 +5,21 @@
 </head>
 <?php
 
-connect();
+$link = connect();
 
 /* address id */
 $addr_query = "SELECT MAX(tfl_id) FROM address";
-$result = query($addr_query);
+$result = query($link, $addr_query);
 
-while ($line = mysql_fetch_row($result)) {
+while ($line = mysqli_fetch_row($result)) {
   $address_id = $line[0];  
 }
 $address_id++;
 
 /* landmark id */
 $land_query = "SELECT MAX(ons_label) FROM landmarks";
-$result = query($land_query);
-while ($line = mysql_fetch_row($result)) {
+$result = query($link, $land_query);
+while ($line = mysqli_fetch_row($result)) {
   $land_id = $line[0];
 }
 $land_id++;

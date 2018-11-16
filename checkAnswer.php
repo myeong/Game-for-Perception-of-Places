@@ -1,8 +1,8 @@
 <?php
 require_once('common.php');
-connect();
+$link = connect();
     
-$ans = mysql_real_escape_string(urldecode($_GET['q']));
+$ans = mysqli_real_escape_string($link, urldecode($_GET['q']));
 $t = $_GET['t'];
 
 if($t != 'familiarity') die('0');
@@ -13,8 +13,8 @@ if (is_numeric($ans)){
   $q = "SELECT * FROM landmarks WHERE ons_label='$ans'";
 }
 
-$result = query($q);
-while ($line = mysql_fetch_array($result, MYSQL_ASSOC)) {
+$result = query($link, $q);
+while ($line = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
   $answer = 'ok';
 }
 

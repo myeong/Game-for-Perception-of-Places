@@ -4,7 +4,7 @@ require('db.php');
 require('ip2locationlite.class.php');
 require('lzwc.php');
 
-$BASE_URL = 'http://urban.myeonglee.com/';
+$BASE_URL = 'http://myeonglee.com/urban/';
 //$BASE_URL = 'http://127.0.0.1/';
 $NUM_QUESTION = 15;
 
@@ -19,10 +19,10 @@ function getID(){
   $date->setTimezone(new DateTimeZone('America/New_York'));
   $datestr = $date->format('Y-m-d H:i:s');
 
-  connect();
+  $link = connect();
   $q = "INSERT INTO users (ip,ip_city,ip_country,ip_lat,ip_lon, timestamp) VALUE('$ip','$city','$country',$lat,$lon,'$datestr')";
-  mysql_query($q);
-  $user['id'] = mysql_insert_id();
+  query($link, $q);
+  $user['id'] = mysqli_insert_id($link);
   $data = base64_encode(serialize($user));
   setcookie('user', $data, time()+3600*24*30*12); //set cookie for 20 years))
   return $user;

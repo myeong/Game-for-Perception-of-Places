@@ -30,9 +30,9 @@
       <?php
       require('common.php');
       
-      connect();
-      $result = query("SELECT name FROM tubes ORDER BY name");
-      while ($line = mysql_fetch_array($result, MYSQL_ASSOC)) {
+      $link = connect();
+      $result = query($link, "SELECT name FROM tubes ORDER BY name");
+      while ($line = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
         echo '<li ';
         echo 'onclick="choice(\''.$line['name'].'\')">';
         echo $line['name'];

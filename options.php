@@ -8,34 +8,34 @@
 $options = array();  /* for final options */
 $values = explode(',', $_GET["values"]); /* 0: latitude, 1: longitude, 2: point_id, 3: fake, 4: landmark_id, 5: address_id */
 
-connect();
+$link = connect();
 
 /* landmark correct answer */
 $qr = 'SELECT ons_label, name FROM landmarks WHERE ons_label="' . $values[4] . '";';
-$result = query($qr);
-$row = mysql_fetch_array($result);
+$result = query($link, $qr);
+$row = mysqli_fetch_array($result);
 $options[0] = '<div class="opt"><input type="radio" name="q1" value="'. $row[0] .'"> ' . $row[1] . '</div>';
 
 /* address correct answer */
 $qr = 'SELECT tfl_id, name FROM address WHERE tfl_id=' . $values[5] . ';';
-$result = query($qr);
-$row = mysql_fetch_array($result);
+$result = query($link, $qr);
+$row = mysqli_fetch_array($result);
 $options[1] = '<div class="opt"><input type="radio" name="q1" value="'. $row[0] .'"> ' . $row[1] . '</div>';
 
 /* landmark wrong answers */
 $qr = 'SELECT ons_label, name FROM landmarks WHERE ons_label!="' . $values[4] . '" ORDER BY RAND() LIMIT 2;';
-$result = query($qr);
+$result = query($link, $qr);
 $i = 2;
-while ($row = mysql_fetch_array($result, MYSQL_NUM)) {
+while ($row = mysql_fetch_array($result, MYSQLI_NUM)) {
 	 $options[$i] = '<div class="opt"><input type="radio" name="q1" value="'. $row[0] .'"> ' . $row[1] . '</div>';
 	 $i++;
 }
 
 /* address wrong answers */
 $qr = 'SELECT tfl_id, name FROM address WHERE tfl_id!=' . $values[5] . ' ORDER BY RAND() LIMIT 2;';
-$result = query($qr);
+$result = query($link, $qr);
 $i = 4;
-while ($row = mysql_fetch_array($result, MYSQL_NUM)) {
+while ($row = mysqli_fetch_array($result, MYSQLI_NUM)) {
 	$options[$i] = '<div class="opt"><input type="radio" name="q1" value="'. $row[0] .'"> ' . $row[1] . '</div>';
 	$i++;
 }

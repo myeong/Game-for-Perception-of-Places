@@ -1,6 +1,6 @@
 <?php
 require_once('common.php');
-connect();
+$link = connect();
 
 function sameQuadrant($b1, $b2) {
   # Regions are hardcoded :(
@@ -51,13 +51,13 @@ function sameQuadrant($b1, $b2) {
   
 }
 
-$points_id = mysql_real_escape_string($_POST['point_id']);
-$station_name = mysql_real_escape_string(URLdecode($_POST['answer_input']));
+$points_id = mysqli_real_escape_string($link, $_POST['point_id']);
+$station_name = mysqli_real_escape_string($link, URLdecode($_POST['answer_input']));
 
 # Get answer info
 $q = "SELECT ons_label,lat,lon FROM boroughs WHERE name='$station_name'";
-$result = query($q);
-while ($line = mysql_fetch_array($result, MYSQL_ASSOC)) {
+$result = query($link, $q);
+while ($line = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
   $answer = $line['ons_label'];
   $answer_lat = $line['lat'];
   $answer_lon = $line['lon'];
@@ -72,8 +72,8 @@ mysql_query($q);
 
 # Get correct answer
 $q = "SELECT name,boroughs_ons_label,points.lat,points.lon FROM points JOIN boroughs ON boroughs.ons_label=points.boroughs_ons_label WHERE id=$points_id";
-$result = query($q);
-while ($line = mysql_fetch_array($result, MYSQL_ASSOC)) {
+$result = query($link, $q);
+while ($line = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
   $correct_answer = $line['boroughs_ons_label'];
   $correct_name = $line['name'];
   $point_lat = $line['lat'];

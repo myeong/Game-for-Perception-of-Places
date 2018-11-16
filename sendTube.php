@@ -1,6 +1,6 @@
 <?php
 require_once('common.php');
-connect();
+$link = connect();
 
 function distance($lat1, $lon1, $lat2, $lon2) {
   if($lat1 == $lat2 && $lon1 == $lon2) return 0;
@@ -14,14 +14,14 @@ function distance($lat1, $lon1, $lat2, $lon2) {
   return ($miles * 1.609344); #Km
 }
 
-$points_id = mysql_real_escape_string($_POST['point_id']);
-$station_name = mysql_real_escape_string(URLdecode($_POST['answer_input']));
+$points_id = mysqli_real_escape_string($link, $_POST['point_id']);
+$station_name = mysqli_real_escape_string($link, URLdecode($_POST['answer_input']));
 
 
 # Get answer info
 $q = "SELECT tfl_id,lat,lon FROM tubes WHERE name='$station_name'";
-$result = query($q);
-while ($line = mysql_fetch_array($result, MYSQL_ASSOC)) {
+$result = query($link, $q);
+while ($line = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
   $tfl_answer = $line['tfl_id'];
   $answer_lat = $line['lat'];
   $answer_lon = $line['lon'];
@@ -32,13 +32,13 @@ if ($station_name=='dunno') $tfl_answer = 0;
 $userinfo = getIDCookie();
 $users_id = $userinfo['id'];
 $q  = "INSERT INTO answers (points_id, tfl_answer, users_id) VALUES ($points_id, $tfl_answer, $users_id)";
-mysql_query($q);
+query($link, $q);
 
 
 # Get correct answer
 $q = "SELECT name,tubes_tfl_id,points.lat,points.lon FROM points JOIN tubes ON tubes.tfl_id=points.tubes_tfl_id WHERE id=$points_id";
-$result = query($q);
-while ($line = mysql_fetch_array($result, MYSQL_ASSOC)) {
+$result = query($link, $q);
+while ($line = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
   $correct_answer = $line['tubes_tfl_id'];
   $correct_name = $line['name'];
   $point_lat = $line['lat'];

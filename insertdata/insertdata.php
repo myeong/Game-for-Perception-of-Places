@@ -1,6 +1,6 @@
 <?php
 require_once('../common.php');
-connect();
+$link = connect();
 
 $lat = $_POST['latitude'];
 $long = $_POST['longitude'];
@@ -12,9 +12,9 @@ $fake = $_POST['fake'];
 
 /* point id */
 $point_query = "SELECT MAX(id) FROM points";
-$result = query($point_query);
+$result = query($link, $point_query);
 
-while ($line = mysql_fetch_row($result)) {
+while ($line = mysqli_fetch_row($link, $result)) {
   $point_id = $line[0];
 }
 $point_id++;
@@ -27,14 +27,14 @@ echo "This is " . $fake . "<br>";
 
 if ($fake==0){
   $query1 = "INSERT INTO address (tfl_id, name, lat, lon) VALUES('$addr_id', '$address', '$lat', '$long')";
-  mysql_query($query1);
+  query($link, $query1);
   
   $query2 = "INSERT INTO landmarks (ons_label, name, lat, lon) VALUES('$land_id', '$landmark', '$lat', '$long')";
-  mysql_query($query2);
+  query($link, $query2);
 }
 
 $query3 = "INSERT INTO points (id, lat, lon, fake, landmark_id, address_id) VALUES('$point_id', '$lat', '$long', $fake, '$land_id', '$addr_id')";
-mysql_query($query3);
+query($link, $query3);
 
 ?>
 

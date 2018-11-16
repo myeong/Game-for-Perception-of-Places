@@ -1,6 +1,6 @@
 <?php
 require_once('common.php');
-connect();
+$link = connect();
 
 function distance($lat1, $lon1, $lat2, $lon2) {
   if($lat1 == $lat2 && $lon1 == $lon2) return 0;
@@ -14,7 +14,7 @@ function distance($lat1, $lon1, $lat2, $lon2) {
   return ($miles * 1.609344); #Km
 }
 
-$points_id = mysql_real_escape_string($_POST['point_id']);
+$points_id = mysqli_real_escape_string($link, $_POST['point_id']);
 $answer = $_POST['answer_input'];
 $tfl_answer = '';
 $answer_lat = 0;
@@ -23,9 +23,9 @@ $answer_lon = 0;
 # Get answer info between Landmark or Address
 if (is_numeric($answer)){
 	$q = "SELECT tfl_id,lat,lon FROM address WHERE tfl_id='$answer'";
-	$result = query($q);
+	$result = query($link, $q);
 	
-	while ($line = mysql_fetch_array($result, MYSQL_ASSOC)) {
+	while ($line = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
 	  $tfl_answer = $line['tfl_id'];
 	  $answer_lat = $line['lat'];
 	  $answer_lon = $line['lon'];
@@ -35,15 +35,15 @@ if (is_numeric($answer)){
 	$userinfo = getIDCookie();
 	$users_id = $userinfo['id'];
 	$q  = "INSERT INTO answers (points_id, users_id, address_answer) VALUES ($points_id, $users_id, $tfl_answer)";
-	mysql_query($q);
+	query($link, $q);
 	
 	/* To get the correct answer */
 	$q = "SELECT address.name,points.address_id,points.lat,points.lon FROM points JOIN address ON address.tfl_id=points.address_id WHERE id=$points_id";
 } else {   
 	$q = "SELECT ons_label,lat,lon FROM landmarks WHERE ons_label='$answer'";	
-    $result = query($q);
+    $result = query($link, $q);
 
-    while ($line = mysql_fetch_array($result, MYSQL_ASSOC)) {  
+    while ($line = mysqli_fetch_array($result, MYSQLI_ASSOC)) {  
       $tfl_answer = $line['ons_label'];
       $answer_lat = $line['lat'];
       $answer_lon = $line['lon'];
@@ -53,7 +53,7 @@ if (is_numeric($answer)){
     $userinfo = getIDCookie();
     $users_id = $userinfo['id'];
 	$q  = "INSERT INTO answers (points_id, users_id, landmark_answer) VALUES ($points_id, $users_id, '$tfl_answer')";
-	$result = mysql_query($q);	
+	$result = mysqli_query($link, $q);	
 	
 	/* To get the correct answer */
 	$q = "SELECT landmarks.name,points.landmark_id,points.lat,points.lon FROM points JOIN landmarks ON landmarks.ons_label=points.landmark_id WHERE id=$points_id";
@@ -61,8 +61,8 @@ if (is_numeric($answer)){
 
 
 # Get correct answer
-$result = query($q);
-while ($line = mysql_fetch_array($result, MYSQL_ASSOC)) {
+$result = query($link, $q);
+while ($line = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
   $correct_answer = isset($line['address_id']) ? $line['address_id'] : $line['landmark_id'];
   $correct_name = $line['name'];
   $point_lat = $line['lat'];
