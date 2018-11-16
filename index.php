@@ -28,7 +28,7 @@ if(isset($_SESSION['occured_id']) && !empty($_SESSION['occured_id'])) {
     <script src="js/bootstrap-popover.js" type="text/javascript"></script>
     <script src="js/jsxcompressor.js" type="text/javascript"></script>
     <script src="js/search.js" type="text/javascript"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9FNbQ-spmKiGCIRcwsvDTNXqoj_cZ5d4&sensor=false" type="text/javascript"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9FNbQ-spmKiGCIRcwsvDTNXqoj_cZ5d4&callback=initMap" async defer></script>
     <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBTJf_y1jGL50yAB9H1ZuQLi-JwtYLgFJw&sensor=false" type="text/javascript"></script> -->
 
     <!-- Le fav and touch icons -->
@@ -100,7 +100,7 @@ if(isset($_SESSION['occured_id']) && !empty($_SESSION['occured_id'])) {
       <div id="picture">
         <div>You can pan and look around the scene by dragging the photo.</div>
         <div id="pano"></div>
-        <div id="google-copyright"><a href="http://maps.google.com"></a></div>
+        <div id="google-copyright"><a href="https://maps.google.com"></a></div>
         <input type="hidden" id="point-id" name="point_id" value="" />
         <input type="hidden" id="fake" name="fake" value="" />
         <div id="report">report image</div>
